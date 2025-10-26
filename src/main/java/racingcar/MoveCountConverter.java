@@ -6,11 +6,17 @@ public class MoveCountConverter {
         int moveCount;
 
         try {
-            moveCount = Integer.parseInt(moveCountString);
+            moveCount = validateMoveCount(Integer.parseInt(moveCountString));
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("moveCount has to be Integer Value", e);
         }
         return moveCount;
     }
 
+    public static int validateMoveCount(int moveCount) {
+        if (moveCount <= 0) {
+            throw new IllegalArgumentException("moveCount has to be positive");
+        }
+        return moveCount;
+    }
 }
