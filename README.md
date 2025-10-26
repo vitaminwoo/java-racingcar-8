@@ -1,10 +1,9 @@
 # java-racingcar-precourse
 
---- 
-<br>
+---
 
-## 구현 기능 목록
-<br>
+# 구현 기능 목록
+
 
 ###  1. 입력받은 경주 자동차 이름을 Split
 
