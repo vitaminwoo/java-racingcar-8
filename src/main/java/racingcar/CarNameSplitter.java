@@ -1,6 +1,7 @@
 package racingcar;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class CarNameSplitter {
@@ -12,6 +13,7 @@ public class CarNameSplitter {
         for (String carName : carNames.split(",")) {
             carNamesList.add(validateCarName(carName));
         }
+        validateDuplicateCarName(carNamesList);
         return carNamesList;
     }
 
@@ -27,6 +29,12 @@ public class CarNameSplitter {
     public static void nullCheckInput(String carNames) {
         if (carNames == null) {
             throw new IllegalArgumentException("carNames is null");
+        }
+    }
+
+    public static void validateDuplicateCarName(List<String> carNames) {
+        if (carNames.size() != new HashSet<>(carNames).size()) {
+            throw new IllegalArgumentException("duplicate carName");
         }
     }
 
