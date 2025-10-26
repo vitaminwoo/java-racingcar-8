@@ -23,15 +23,17 @@ public class RaceResult {
             if(moveRequirement()){
                 carMoveMap.put(carName, moveCount + 1);
             }
-            String carMoveStr = "-".repeat(moveCount);
+            String carMoveStr = "-".repeat(carMoveMap.get(carName));
             System.out.println(carName + " : " + carMoveStr);
         });
-    }
-    public Map<String, Integer> getRaceResult() {
-        return this.carMoveMap;
+        System.out.println();
     }
 
     public boolean moveRequirement() {
         return Randoms.pickNumberInRange(0, 9) >= 4;
+    }
+
+    public Map<String, Integer> getRaceResult() {
+        return this.carMoveMap;
     }
 }
