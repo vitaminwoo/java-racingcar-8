@@ -3,6 +3,7 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.List;
+import java.util.Map;
 
 public class Application {
     public static void main(String[] args) {
@@ -13,5 +14,10 @@ public class Application {
         // 2. 시도 횟수
         System.out.println("시도할 횟수는 몇 회인가요?");
         int moveCount = MoveCountConverter.convertInput(Console.readLine());
+
+        // 3. 경주 진행
+        System.out.println("실행 결과");
+        Map<String, Integer> raceResult = StartRacing.runRacing(carNamesList, moveCount);
+
     }
 }
