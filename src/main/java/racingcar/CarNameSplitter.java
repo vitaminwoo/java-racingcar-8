@@ -5,8 +5,8 @@ import java.util.List;
 
 public class CarNameSplitter {
 
-    public static List<String> splitCarNames(String carNames) {
-        nullCheckCarNames(carNames);
+    public static List<String> splitInput(String carNames) {
+        nullCheckInput(carNames);
 
         List<String> carNamesList = new ArrayList<>();
         for (String carName : carNames.split(",")) {
@@ -24,7 +24,7 @@ public class CarNameSplitter {
         return carName;
     }
 
-    public static void nullCheckCarNames(String carNames) {
+    public static void nullCheckInput(String carNames) {
         if (carNames == null) {
             throw new IllegalArgumentException("carNames is null");
         }
