@@ -19,5 +19,7 @@ public class Application {
         System.out.println("실행 결과");
         Map<String, Integer> raceResult = StartRacing.runRacing(carNamesList, moveCount);
 
+        // 4. 최종 우승자
+        System.out.println("최종 우승자 : " + WinnerSelector.winnerNames(raceResult));
     }
 }
