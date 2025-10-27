@@ -19,21 +19,24 @@ public class CarNameTest extends NsTest {
     void 입력값_자동차이름_5자이하_검증() {
         assertThatThrownBy(() ->
                 CarNameSplitter.splitInput("pobi,javaji"))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("carName only contains 5 characters");
     }
 
     @Test
     void 입력값_자동차이름_null_검증() {
         assertThatThrownBy(() ->
                 CarNameSplitter.splitInput(null))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("carNames is null");
     }
 
     @Test
     void 입력값_자동차이름_중복_검증() {
         assertThatThrownBy(() ->
                 CarNameSplitter.splitInput("pobi,pobi"))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("duplicate carName");
     }
 
     @Override
