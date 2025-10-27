@@ -11,10 +11,10 @@ public class Application {
         List<String> carNamesList = CarNameSplitter.splitInput(Console.readLine());
 
         System.out.println("시도할 횟수는 몇 회인가요?");
-        int moveCount = RaceCountConverter.convertInput(Console.readLine());
+        int raceCount = RaceCountConverter.convertInput(Console.readLine());
 
         System.out.println("실행 결과");
-        Map<String, Integer> raceResult = StartRacing.runRacing(carNamesList, moveCount);
+        Map<String, Integer> raceResult = StartRacing.runRacing(carNamesList, raceCount);
 
         System.out.println("최종 우승자 : " + WinnerSelector.winnerNames(raceResult));
     }
