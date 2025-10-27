@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class RaceResult {
+    private static final int START_INCLUSIVE = 0;
+    private static final int END_INCLUSIVE = 9;
+    private static final int RANDOM_VALUE_REQUIRE = 4;
 
     private final Map<String, Integer> carMoveMap;
 
@@ -30,7 +33,7 @@ public class RaceResult {
     }
 
     public boolean moveRequirement() {
-        return Randoms.pickNumberInRange(0, 9) >= 4;
+        return Randoms.pickNumberInRange(START_INCLUSIVE, END_INCLUSIVE) >= RANDOM_VALUE_REQUIRE;
     }
 
     public Map<String, Integer> getRaceResult() {

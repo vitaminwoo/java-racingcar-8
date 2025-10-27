@@ -6,6 +6,8 @@ import java.util.List;
 
 public class CarNameSplitter {
 
+    private static final int CAR_NAME_MAX_LENGTH = 5;
+
     public static List<String> splitInput(String carNames) {
         nullCheckInput(carNames);
 
@@ -18,7 +20,7 @@ public class CarNameSplitter {
     }
 
     public static String validateCarName(String carName) {
-        if (carName.length() > 5) {
+        if (carName.length() > CAR_NAME_MAX_LENGTH) {
             throw new IllegalArgumentException("carName only contains 5 characters");
         } else if (carName.isEmpty()) {
             throw new IllegalArgumentException("carName is empty");
